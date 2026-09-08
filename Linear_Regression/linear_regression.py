@@ -45,3 +45,15 @@ print(y_test.values)
 
 print("\nPredicted Values")
 print(y_pred)
+
+#Evaluate the model
+mae=mean_absolute_error(y_test,y_pred)
+mse=mean_squared_error(y_test,y_pred)
+rmse=np.sqrt(mse)
+r2=r2_score(y_test,y_pred)
+
+print("\nModel Evaluation")
+print("Mean Absolute Error:",mae)
+print("Mean Square Error:",mse)
+print("Root Mean Square Error:",rmse)
+print("r2 Score:",r2)
