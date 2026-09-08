@@ -22,7 +22,7 @@ X=df[["semisters"]]
 y=df["percentage"]
 
 # Spliting the dataset into training and testing
-x_train,x_test,y_tain,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
+x_train,x_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
 
 print("\nTraining Data:")
 print(x_train)
@@ -31,3 +31,17 @@ print(x_train)
 print("\nTesting Data:")
 print(x_test)
 
+# create the model
+model=LinearRegression()
+
+#train the model
+model.fit(x_train,y_train)
+
+#Make Predictions
+y_pred=model.predict(x_test)
+
+print("\nActual Values")
+print(y_test.values)
+
+print("\nPredicted Values")
+print(y_pred)
