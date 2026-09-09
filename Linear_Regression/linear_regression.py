@@ -64,3 +64,12 @@ prediction=model.predict(new_hour)
 
 print("\nPrediction:")
 print(f"Expected Drilled meters for 8.5 hours:{prediction[0]:.2f}")
+
+# visualize the result
+plt.figure(figsize=(7,5))
+plt.scatter(X,y,label="Actual Data")
+plt.plot(X,model.predict(X),label="Regression Line")
+plt.title("Hours Drilled vs Meters")
+plt.xlabel("Hours")
+plt.ylabel("Meters")
+plt.show()
