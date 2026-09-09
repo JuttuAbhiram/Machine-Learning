@@ -57,3 +57,10 @@ print("Mean Absolute Error:",mae)
 print("Mean Square Error:",mse)
 print("Root Mean Square Error:",rmse)
 print("r2 Score:",r2)
+
+# Prediction for new Data
+new_hour=pd.DataFrame({"hours":[8.5]})
+prediction=model.predict(new_hour)
+
+print("\nPrediction:")
+print(f"Expected Drilled meters for 8.5 hours:{prediction[0]:.2f}")
